@@ -1,33 +1,38 @@
 import React from 'react';
-import { View, Text, Button} from 'react-native';
-// import { Constants } from 'expo';
 import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.14
+import { View, Text, Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
+// import { Constants } from 'expo';
+
 import Activity1 from './components/Activity1';
 import Activity2 from './components/Activity2';
 import Activity3 from './components/Activity3';
+import Activity4 from './components/Activity4';
 
 const HomeScreen = ({ navigation }) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Home Screen{"\n"}{"\n"}</Text>
-    <Button
-      onPress={() => navigation.navigate('Details')}
-      title="Details"
-    />
-    <Text>{"\n"}</Text>
-    <Button
-      onPress={() => navigation.navigate('Activity1')}
-      title="Activity1"
-    />
-    <Text>{"\n"}</Text>
-    <Button
-      onPress={() => navigation.navigate('Activity2')}
-      title="Activity2"
-    />
-    <Text>{"\n"}</Text>
-    <Button
-      onPress={() => navigation.navigate('Activity3')}
-      title="Activity3"
-    />
+
+    <View style={styles.grid}>
+        <TouchableOpacity onPress={() => navigation.navigate('Activity1')}>
+          <View style={styles.button}>
+            <Text style={{padding:10}}>Activity 1</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Activity2')}>
+          <View style={styles.button}>
+            <Text style={{padding:10}}>Activity 2</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Activity3')}>
+          <View style={styles.button}>
+            <Text style={{padding:10}}>Activity 3</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Activity4')}>
+          <View style={styles.button}>
+            <Text style={{padding:10}}>Activity 4</Text>
+          </View>
+        </TouchableOpacity>
+    </View>
   </View>
 );
 
@@ -67,6 +72,26 @@ const RootNavigator = StackNavigator({
     navigationOptions: {
       headerTitle: 'Activity3',
     },
+  },
+  Activity4: {
+    screen: Activity4,
+    navigationOptions: {
+      headerTitle: 'Activity4',
+    },
+  },
+});
+
+const styles = StyleSheet.create({
+   button: {
+    margin: 15,
+    width: Dimensions.get('window').width/3,
+    alignItems: 'center',
+    backgroundColor: '#7986CB',
+  },
+  grid: {
+    margin: 25,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 });
 
