@@ -5,6 +5,7 @@ import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.14
 import Activity1 from './components/Activity1';
 import Activity2 from './components/Activity2';
 import Activity3 from './components/Activity3';
+import Activity4 from './components/Activity4';
 
 const HomeScreen = ({ navigation }) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -27,6 +28,11 @@ const HomeScreen = ({ navigation }) => (
     <Button
       onPress={() => navigation.navigate('Activity3')}
       title="Activity3"
+    />
+    <Text>{"\n"}</Text>
+    <Button
+      onPress={() => navigation.navigate('Activity4')}
+      title="Activity4"
     />
   </View>
 );
@@ -66,6 +72,12 @@ const RootNavigator = StackNavigator({
     screen: Activity3,
     navigationOptions: {
       headerTitle: 'Activity3',
+    },
+  },
+  Activity4: {
+    screen: Activity4,
+    navigationOptions: {
+      headerTitle: 'Activity4',
     },
   },
 });
