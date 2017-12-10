@@ -33,17 +33,17 @@ export default class Activity3 extends Component {
     
   var buttons = [];
 
-	for(let i = 0; i < len; i++){
+  for(let i = 0; i < len; i++){
 
-      		buttons.push(
-	        <TouchableOpacity onPress={() => this._handleButtonPress(ans[i])}>
+          buttons.push(
+          <TouchableOpacity onPress={() => this._handleButtonPress(ans[i])}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>{ans[i]}</Text>
               </View>
           </TouchableOpacity>
-		    )
+        )
 
-	}
+  }
       
     
     return (
@@ -69,8 +69,8 @@ export default class Activity3 extends Component {
         <View style={styles.opsBox} >
           
           <View >
-      			{ buttons }
-      		</View>
+            { buttons }
+          </View>
 
         </View>
         <View style={styles.subBox}>
