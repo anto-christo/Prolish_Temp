@@ -1,5 +1,6 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.14
+import { StackNavigator } from 'react-navigation';
+// 1.0.0-beta.14
 import {
   View,
   Text,
@@ -15,6 +16,7 @@ import Activity3 from './components/Activity3';
 import Activity4 from './components/Activity4';
 import Activity5 from './components/Activity5';
 import Activity6 from './components/Activity6';
+import Activity7 from './components/Activity7';
 
 const HomeScreen = ({ navigation }) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -48,6 +50,11 @@ const HomeScreen = ({ navigation }) => (
       <TouchableOpacity onPress={() => navigation.navigate('Activity6')}>
         <View style={styles.button}>
           <Text style={{ padding: 10 }}>Activity 6</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Activity7')}>
+        <View style={styles.button}>
+          <Text style={{ padding: 10 }}>Activity 7</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -107,6 +114,12 @@ const RootNavigator = StackNavigator({
     screen: Activity6,
     navigationOptions: {
       headerTitle: 'Activity6',
+    },
+  },
+  Activity7: {
+    screen: Activity7,
+    navigationOptions: {
+      headerTitle: 'Activity7',
     },
   },
 });
